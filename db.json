@@ -1,1 +1,154 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2022-12-27T07:00:03.712Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "Post object (1)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2022-12-27T08:08:41.336Z", "user": 1, "content_type": 4, "object_id": "2", "object_repr": "blogger", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$390000$05UGv6oQeF8J8FQmiKcfXT$mbPULALhJR7hkS+oFRc32MPnizvQPlHG4NQUui/RidU=", "last_login": "2022-12-27T09:39:15.181Z", "is_superuser": true, "username": "admin", "first_name": "", "last_name": "", "email": "admin@admin.com", "is_staff": true, "is_active": true, "date_joined": "2022-12-27T06:04:35.927Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$390000$ZeMi2KA66T0ywhtJamknbg$vHgJeOw3DjVGhVx//vZKuaOSDeWrmmUbURSEmG8I134=", "last_login": "2022-12-27T08:40:49.726Z", "is_superuser": false, "username": "blogger", "first_name": "", "last_name": "", "email": "", "is_staff": false, "is_active": true, "date_joined": "2022-12-27T08:08:41.099Z", "groups": [], "user_permissions": []}}, {"model": "sessions.session", "pk": "yks4xlymavigy5jg3f0izwoe3fgmmngp", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGlleL4nXlPQ5g7XrDw6gRIqTCnF3iJQC2jcz76UCb2sNW8tLGJO6KFCn3004PvK0g3Tn6TbrOE_rMoreFX3Qpoc55ef1cP8OKrf6raNnV1AI0fb2bAQ8AyODGJcwCnkHrrMFDFrJWBIROU99ZwGIS-fV-wPKRjbk:1pA6QV:l8iqfajacvWt7j4NhdGXX5QafAs9DPdScSsFABM2Wuk", "expire_date": "2023-01-10T09:39:15.206Z"}}, {"model": "blog.post", "pk": 1, "fields": {"created": "2022-12-27T07:00:03.694Z", "title": "first post", "body": "this is a test post to test out the post api created using django rest framework", "author": 1}}, {"model": "blog.post", "pk": 4, "fields": {"created": "2022-12-27T08:41:12.696Z", "title": "blog post", "body": "blog post from blogger account", "author": 2}}, {"model": "blog.post", "pk": 5, "fields": {"created": "2022-12-27T09:39:05.956Z", "title": "postman", "body": "blog post from postman", "author": 1}}, {"model": "blog.comment", "pk": 1, "fields": {"created": "2022-12-27T08:59:42.537Z", "body": "This is a first comment", "author": 1, "post": 1}}, {"model": "blog.comment", "pk": 2, "fields": {"created": "2022-12-27T09:50:15.044Z", "body": "comments from postman api", "author": 1, "post": 5}}, {"model": "blog.comment", "pk": 3, "fields": {"created": "2022-12-27T09:54:29.442Z", "body": "second comments from postman api", "author": 1, "post": 1}}, {"model": "blog.category", "pk": 1, "fields": {"name": "Tech", "author": 1, "posts": [1]}}, {"model": "blog.category", "pk": 2, "fields": {"name": "Travel", "author": 1, "posts": [5]}}]
+[
+	{
+		"model": "admin.logentry",
+		"pk": 1,
+		"fields": {
+			"action_time": "2022-12-27T07:00:03.712Z",
+			"user": 1,
+			"content_type": 7,
+			"object_id": "1",
+			"object_repr": "Post object (1)",
+			"action_flag": 1,
+			"change_message": "[{\"added\": {}}]"
+		}
+	},
+	{
+		"model": "admin.logentry",
+		"pk": 2,
+		"fields": {
+			"action_time": "2022-12-27T08:08:41.336Z",
+			"user": 1,
+			"content_type": 4,
+			"object_id": "2",
+			"object_repr": "blogger",
+			"action_flag": 1,
+			"change_message": "[{\"added\": {}}]"
+		}
+	},
+	{
+		"model": "auth.user",
+		"pk": 1,
+		"fields": {
+			"password": "pbkdf2_sha256$390000$05UGv6oQeF8J8FQmiKcfXT$mbPULALhJR7hkS+oFRc32MPnizvQPlHG4NQUui/RidU=",
+			"last_login": "2022-12-27T09:39:15.181Z",
+			"is_superuser": true,
+			"username": "admin",
+			"first_name": "",
+			"last_name": "",
+			"email": "admin@admin.com",
+			"is_staff": true,
+			"is_active": true,
+			"date_joined": "2022-12-27T06:04:35.927Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "auth.user",
+		"pk": 2,
+		"fields": {
+			"password": "pbkdf2_sha256$390000$ZeMi2KA66T0ywhtJamknbg$vHgJeOw3DjVGhVx//vZKuaOSDeWrmmUbURSEmG8I134=",
+			"last_login": "2022-12-27T08:40:49.726Z",
+			"is_superuser": false,
+			"username": "blogger",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2022-12-27T08:08:41.099Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "sessions.session",
+		"pk": "yks4xlymavigy5jg3f0izwoe3fgmmngp",
+		"fields": {
+			"session_data": ".eJxVjDsOwjAQBe_iGlleL4nXlPQ5g7XrDw6gRIqTCnF3iJQC2jcz76UCb2sNW8tLGJO6KFCn3004PvK0g3Tn6TbrOE_rMoreFX3Qpoc55ef1cP8OKrf6raNnV1AI0fb2bAQ8AyODGJcwCnkHrrMFDFrJWBIROU99ZwGIS-fV-wPKRjbk:1pA6QV:l8iqfajacvWt7j4NhdGXX5QafAs9DPdScSsFABM2Wuk",
+			"expire_date": "2023-01-10T09:39:15.206Z"
+		}
+	},
+	{
+		"model": "blog.post",
+		"pk": 1,
+		"fields": {
+			"created": "2022-12-27T07:00:03.694Z",
+			"title": "first post",
+			"body": "this is a test post to test out the post api created using django rest framework",
+			"author": 1
+		}
+	},
+	{
+		"model": "blog.post",
+		"pk": 4,
+		"fields": {
+			"created": "2022-12-27T08:41:12.696Z",
+			"title": "blog post",
+			"body": "blog post from blogger account",
+			"author": 2
+		}
+	},
+	{
+		"model": "blog.post",
+		"pk": 5,
+		"fields": {
+			"created": "2022-12-27T09:39:05.956Z",
+			"title": "postman",
+			"body": "blog post from postman",
+			"author": 1
+		}
+	},
+	{
+		"model": "blog.comment",
+		"pk": 1,
+		"fields": {
+			"created": "2022-12-27T08:59:42.537Z",
+			"body": "This is a first comment",
+			"author": 1,
+			"post": 1
+		}
+	},
+	{
+		"model": "blog.comment",
+		"pk": 2,
+		"fields": {
+			"created": "2022-12-27T09:50:15.044Z",
+			"body": "comments from postman api",
+			"author": 1,
+			"post": 5
+		}
+	},
+	{
+		"model": "blog.comment",
+		"pk": 3,
+		"fields": {
+			"created": "2022-12-27T09:54:29.442Z",
+			"body": "second comments from postman api",
+			"author": 1,
+			"post": 1
+		}
+	},
+	{
+		"model": "blog.category",
+		"pk": 1,
+		"fields": {
+			"name": "Tech",
+			"author": 1,
+			"posts": [
+				1
+			]
+		}
+	},
+	{
+		"model": "blog.category",
+		"pk": 2,
+		"fields": {
+			"name": "Travel",
+			"author": 1,
+			"posts": [
+				5
+			]
+		}
+	}
+]
