@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from blog.permissions import IsOwnerOrReadOnly
 
 from blog import serializers
-from blog.models import Post, Comment
+from blog.models import Post, Comment, Category
 
 # Create your views here.
 class UserList(generics.ListAPIView):
@@ -38,4 +38,17 @@ class CommentList(generics.ListCreateAPIView):
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Comment.objects.all()
 	serializer_class = serializers.CommentSerializer
+	permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+class CategoryList(generics.ListCreateAPIView):
+	queryset = Category.objects.all()
+	serializer_class = serializers.CategorySerializer
+	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+	def perform_create(self, serializer):
+		serializer.save(author=self.request.user)
+
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = Category.objects.all()
+	serializer_class = serializers.CategorySerializer
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
