@@ -13,3 +13,12 @@ class Post(models.Model):
 
 	class Meta:
 		ordering = ['created']
+
+class Comment(models.Model):
+	created = models.DateTimeField(auto_now_add=True)
+	body = models.TextField(blank=False)
+	author = models.ForeignKey('auth.user', related_name='comments', on_delete=models.CASCADE)
+	post = models.ForeignKey('Post', related_name='comments', on_delete=models.CASCADE)
+
+	class Meta:
+		ordering = ['created']
