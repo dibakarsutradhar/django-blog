@@ -14,7 +14,7 @@ class Post(models.Model):
 	author = models.ForeignKey('auth.user', related_name='posts', on_delete=models.CASCADE)
 
 	class Meta:
-		ordering = ['created']
+		ordering = ['-created']
 
 	def __str__(self):
 		return self.title
